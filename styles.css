@@ -1,0 +1,208 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.skeleton {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 80px 1fr;
+}
+
+.skeleton.closed {
+    grid-template-columns: 0px 1fr;
+    transition: grid-template-columns 0.4s ease-out;
+    overflow: hidden;
+}
+
+.skeleton.closed .table-of-contents {
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.bubble-style {
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    background-color: #454546;
+    border: #93999b solid 2px;
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
+}
+
+.bubble-style:hover {
+    background-color: #34373b;
+    cursor: pointer;
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+
+.bubble-style:active {
+    background-color: #363636;
+    cursor: pointer;
+    transform: translateY(5px);
+}
+
+.notification{
+    position: absolute;
+    top: 0px;
+    right: -5px;
+    border-radius: 40px;
+    background-color: #4f5674;
+    color: white;
+    width: 20px;
+    height: 20px;
+}
+
+.notification-number {
+    position: absolute;
+    top: 0px;
+    right: 6px;
+    color: white;
+}
+
+.title {
+    overflow: scroll;
+    gap: 36px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    position: sticky;
+    display: grid;
+    top: 0px;
+    grid-column: 1 / -1;
+    background-color: #2b2e2f;
+    color: #ebebeb;
+    z-index: 2;
+}
+
+.title-header {
+    margin-left: 10px;
+    margin-top: 16px;
+    font-size: 30px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+}
+.title-header-sub {
+    margin-top: 8px;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'Roboto Mono', monospace;
+    color: #d3d3d3;
+    word-wrap: break-word;
+}
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
+    margin-right: 16px;
+    border: 2px solid white;
+    border-radius: 48px;
+}
+    /* z-index: 1; */
+
+.table-of-contents {
+    height: 100vh;
+    background-color: #53595d;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    grid-auto-rows: repeat(30px);
+    box-shadow: 4px 0 8px rgb(0, 0, 0, 0.25);
+    gap: 16px;
+    z-index: 1;
+}
+
+/* COMMENTED OUT incorrect way of closing the table of contents.
+.table-of-contents.closed {
+    width: 0px;
+    height: 0px;
+}
+*/
+
+.contents-title {
+    font-weight: 500;
+    padding: 20px;
+    font-size: 32px;
+    font-family: 'Montserrat', sans-serif;
+    color: #d3d3d3;
+    word-wrap: break-word;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+.lab-content-summary {
+    font-weight: 400;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    color: #d3d3d3;
+    background-color: #555e61;
+    width: fit-content;
+    word-wrap: break-word;
+    border-radius: 8px;
+    height: 30px;
+    padding: 4px 12px;
+    align-self: center;
+}
+
+
+
+.content {
+    height: 100vh;
+    background-color: #4b4e51;
+    color: #d3d3d3;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: rgb(221, 216, 216);
+    padding: 10px;
+    background-color: #3d3f3f;
+    border: none;
+    border-radius: 20%;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.card-container {
+    display: flex;
+    gap: 2rem;
+    padding: var(--spacing);
+    justify-content: center;
+}
+
+.cards {
+    flex: 1 1 250px;
+    max-width: 250px;
+    color: #d2dfe3;
+    font-size: 30px;
+    font: Montserrat, sans-serif;
+    font-weight: 700;
+    background-color: #3b3d3d;
+    border: 4px solid #323335;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    margin-top: 10rem;
+    transition: transform, 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.cards:hover {
+    transform: translateY(-5px);
+    background-color: #373a3c;
+}
+    
